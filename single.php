@@ -2,14 +2,14 @@
 /**
  * The template for displaying all single posts
  *
- * @package UnderStrap
+ * @package FreedomTheme
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod( 'cf_container_type' );
 ?>
 
 <div class="wrapper" id="single-wrapper">

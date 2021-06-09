@@ -216,7 +216,7 @@ class CF_Compiler {
 		src(`${paths.node}popper.js/dist/umd/popper.js`)
 			.pipe(dest(`${paths.js}${paths.vendor}`));
 
-		// UnderStrap SCSS files
+		// FreedomTheme SCSS files
 		src(`${paths.node}understrap/sass/**/*.scss`)
 			.pipe(dest(`${paths.dev}/sass/understrap`));
 

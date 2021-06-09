@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages
  *
- * @package UnderStrap
+ * @package FreedomTheme
  */
 
 // Exit if accessed directly.
@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod( 'cf_container_type' );
 
 ?>
 
@@ -33,7 +33,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<?php
 								printf(
 									/* translators: %s: query term */
-									esc_html__( 'Search Results for: %s', 'understrap' ),
+									esc_html__( 'Search Results for: %s', 'freedomtheme' ),
 									'<span>' . get_search_query() . '</span>'
 								);
 								?>

@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package UnderStrap
+ * @package FreedomTheme
  */
 
 // Exit if accessed directly.

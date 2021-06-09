@@ -2,7 +2,7 @@
 /**
  * Hero setup
  *
- * @package UnderStrap
+ * @package FreedomTheme
  */
 
 // Exit if accessed directly.

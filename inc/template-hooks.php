@@ -1,11 +1,9 @@
 <?php
 /**
- * Blank content partial template
+ * Custom hooks
  *
  * @package FreedomTheme
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
-the_content();

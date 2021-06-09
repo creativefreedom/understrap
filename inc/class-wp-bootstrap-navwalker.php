@@ -42,7 +42,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 		 * @param int      $depth  Depth of menu item. Used for padding.
 		 * @param stdClass $args   An object of wp_nav_menu() arguments.
 		 */
-		public function start_lvl( &$output, $depth = 0, $args = array() ) {
+		public function start_lvl( &$output, $depth = 0, $args = [] ) {
 			if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 				$t = '';
 				$n = '';
@@ -96,7 +96,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 		 * @param stdClass $args   An object of wp_nav_menu() arguments.
 		 * @param int      $id     Current item ID.
 		 */
-		public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+		public function start_el( &$output, $item, $depth = 0, $args = [], $id = 0 ) {
 			if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 				$t = '';
 				$n = '';
@@ -106,12 +106,12 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 			}
 			$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
 
-			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+			$classes = empty( $item->classes ) ? [] : (array) $item->classes;
 
 			// Initialize some holder variables to store specially handled item
 			// wrappers and icons.
-			$linkmod_classes = array();
-			$icon_classes    = array();
+			$linkmod_classes = [];
+			$icon_classes    = [];
 
 			/**
 			 * Get an updated $classes array without linkmod or icon classes.
@@ -171,7 +171,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 			$output .= $indent . '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
 
 			// initialize array for holding the $atts for the link item.
-			$atts = array();
+			$atts = [];
 
 			// Set title from item to the $atts array - if title is empty then
 			// default to item title.
@@ -373,7 +373,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 				if ( $menu_class ) {
 					$fallback_output .= ' class="' . esc_attr( $menu_class ) . '"'; }
 				$fallback_output .= '>';
-				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'understrap' ) . '">' . esc_html__( 'Add a menu', 'understrap' ) . '</a></li>';
+				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'freedomtheme' ) . '">' . esc_html__( 'Add a menu', 'freedomtheme' ) . '</a></li>';
 				$fallback_output .= '</ul>';
 				if ( $container ) {
 					$fallback_output .= '</' . esc_attr( $container ) . '>';
@@ -381,7 +381,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 
 				// if $args has 'echo' key and it's true echo, otherwise return.
 				if ( array_key_exists( 'echo', $args ) && $args['echo'] ) {
-					echo $fallback_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					print $fallback_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				} else {
 					return $fallback_output;
 				}
@@ -444,7 +444,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 		 *
 		 * @return string                empty for default, a linkmod type string otherwise.
 		 */
-		private function get_linkmod_type( $linkmod_classes = array() ) {
+		private function get_linkmod_type( $linkmod_classes = [] ) {
 			$linkmod_type = '';
 			// Loop through array of linkmod classes to handle their $atts.
 			if ( ! empty( $linkmod_classes ) ) {
@@ -475,7 +475,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 		 *
 		 * @return array                 maybe updated array of attributes for item.
 		 */
-		private function update_atts_for_linkmod_type( $atts = array(), $linkmod_classes = array() ) {
+		private function update_atts_for_linkmod_type( $atts = [], $linkmod_classes = [] ) {
 			if ( ! empty( $linkmod_classes ) ) {
 				foreach ( $linkmod_classes as $link_class ) {
 					if ( ! empty( $link_class ) ) {
