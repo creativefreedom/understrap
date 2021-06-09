@@ -4,6 +4,9 @@
   "description": "WordPress Theme framework",
   "main": "index.js",
   "scripts": {
+    "start": "gulp watch-bs",
+    "dev": "gulp watch",
+    "build": "gulp compile",
     "postinstall": "gulp copy-assets"
   },
   "engines": {
@@ -26,7 +29,6 @@
     "url": "https://github.com/understrap/understrap/issues"
   },
   "homepage": "https://understrap.com",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
